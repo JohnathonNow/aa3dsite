@@ -8,6 +8,13 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css" >
+        <style>
+
+      /* Ensure elements load hidden before ScrollReveal runs */
+      .hidden { visibility: hidden; }
+      .featurette { visibility: hidden;}
+
+          </style>
 
     <title>Atic Atac 3D</title>
   </head>
@@ -26,6 +33,9 @@
             </li>
             <li class="nav-item">
               <a class="nav-link" href="https://github.com/a3qz/AticAtac3D">Code</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="preorder.html">Preorder</a>
             </li>
           </ul>
         </div>
@@ -74,19 +84,22 @@
             <img class="rounded-circle" src="ryan.jpg" alt="Generic placeholder image" width="140" height="140">
             <h2>Ryan</h2>
             <p>Did most of the project</p>
-            <p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p>
+            <p class="hidden ryan">Organized the Unity project, created system for level transitions, did general gameplay stuff</p>
+            <p><div class="btn btn-secondary" role="button" onclick="sr.reveal('.ryan', { duration: 1000, scale: 0});">View details &raquo;</div></p>
           </div><!-- /.col-lg-4 -->
           <div class="col-lg-4">
             <img class="rounded-circle" src="happy.png" alt="Generic placeholder image" width="140" height="140">
             <h2>Happy</h2>
             <p>Went apartment hunting</p>
-            <p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p>
+            <p class="hidden happy">Created the in-game UI system, stole assets from the internet, chose those dope pictures, made a room full of food</p>
+            <p><div class="btn btn-secondary" role="button" onclick="sr.reveal('.happy', { duration: 1000, scale: 0});">View details &raquo;</div></p>
           </div><!-- /.col-lg-4 -->
           <div class="col-lg-4">
             <img class="rounded-circle" src="jeffrey.jpg" alt="Generic placeholder image" width="140" height="140">
             <h2>Jeff</h2>
             <p>Insisted on making this awful website</p>
-            <p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p>
+            <p class="hidden jeff">Made in-game enemies, stole assets from the internet, used Blender to create some awful animations, mostly of Shrek</p>
+            <p><div class="btn btn-secondary" role="button" onclick="sr.reveal('.jeff', { duration: 1000, scale: 0});">View details &raquo;</div></p>
           </div><!-- /.col-lg-4 -->
         </div><!-- /.row -->
 
@@ -99,7 +112,8 @@
           <div class="col-md-7">
             <h2 class="featurette-heading">3D Action, <span class="text-muted">It'll blow your mind.</span></h2>
             <p class="lead">We utilize blockchain technologies to drive your GPU to the max, granting next-gen visuals and an immersive
-            experience so real you will regret having to go back to your boring, everyday life.</p>
+            experience so real you will regret having to go back to your boring, everyday life. Slimes. Ghosts. Serfs. Magic. Shrek. We
+            have more than you could have possibly wanted in a 3D remake of your favorite Ultimate Play The Game title.</p>
           </div>
           <div class="col-md-5">
             <img class="featurette-image img-fluid mx-auto" data-src="holder.js/500x500/auto" alt="Generic placeholder image">
@@ -112,7 +126,7 @@
           <div class="col-md-7 order-md-2">
             <h2 class="featurette-heading">Oh yeah, it's that good. <span class="text-muted">See for yourself.</span></h2>
             <p class="lead">We spent minutes hand-picking the highest quality assets for our game. We then spent several more minutes
-            dragging them into Unity. Our hard work shows.</p>
+            dragging them into Unity. Our hard work shows. We had to learn a new programming language for this. That's how much we care.</p>
           </div>
           <div class="col-md-5 order-md-1">
             <img class="featurette-image img-fluid mx-auto" data-src="holder.js/500x500/auto" alt="Generic placeholder image">
@@ -155,7 +169,9 @@
     <script src="https://unpkg.com/scrollreveal/dist/scrollreveal.min.js"></script>
     <script>
         window.sr = ScrollReveal({ reset: true });
-        sr.reveal('.featurette', { duration: 1000 });
+        function go(e) {
+        }
+        sr.reveal('.featurette', { duration: 1000, viewFactor: 0.5, beforeReveal: go, afterReveal: go });
     </script>
   </body>
 </html>
